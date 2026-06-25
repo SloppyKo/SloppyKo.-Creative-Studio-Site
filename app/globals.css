@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans_18pt-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans_18pt-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "DM Sans";
+  src: url("/fonts/DMSans_18pt-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("/fonts/Comfortaa-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url("/fonts/Comfortaa-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #11131a;
+  --foreground: #f4f1ea;
+
+  --sloppyko-blue: #4f8cff;
+  --moon-white: #f4f1ea;
+  --nuketown-yellow: #f6d76a;
+  --astro-red: #ff5c6c;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Comfortaa", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav {
+  font-family: "DM Sans", sans-serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
