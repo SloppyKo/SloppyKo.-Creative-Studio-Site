@@ -23,16 +23,16 @@ function useScrollReveal(threshold = 0.15) {
 
 const heroSlides: { label: string; image: string; rawImage?: boolean; phoneMockup?: boolean; liveUrl?: string; clickVideo?: boolean }[] = [
   {
-    label: "Website Creation",
-    image: "/images/radiantlybare_iphone.webp",
-    phoneMockup: true,
-    liveUrl: "https://www.radiantlybare.com",
-  },
-  {
     label: "Application Development",
     image: "/images/page hero/khalo hero.png",
     rawImage: true,
     clickVideo: true,
+  },
+  {
+    label: "Website Creation",
+    image: "/images/radiantlybare_iphone.webp",
+    phoneMockup: true,
+    liveUrl: "https://www.radiantlybare.com",
   },
   {
     label: "Brand Design",
@@ -44,6 +44,7 @@ const heroSlides: { label: string; image: string; rawImage?: boolean; phoneMocku
 export default function Home() {
   const [servicesRef, servicesVisible] = useScrollReveal(0.1);
   const [missionRef, missionVisible] = useScrollReveal(0.2);
+  const [openServiceIndex, setOpenServiceIndex] = useState<number | null>(null);
 
   return (
     <main>
@@ -100,40 +101,41 @@ export default function Home() {
           </h2>
 
           <p className="text-lg md:text-xl leading-relaxed text-black/60 max-w-2xl mb-16">
-            We build creative and technical solutions around the way your business already operates.
+            We're a San Luis Obispo based creative studio serving small businesses across California's Central Coast, Central Valley, and beyond. We build creative and technical solutions around the way your small business already operates.
           </p>
 
           <div ref={servicesRef} className="space-y-8">
             {[
               {
                 title: "Websites",
-                text: "Custom-built websites",
+                text: "Custom-built from scratch. Designed for your customers, and optimized for desktops, tablets, and cell phones.",
               },
               {
                 title: "Applications",
-                text: "Custom-built operational tools and data pipelines",
+                text: "Custom-built operational tools and data pipelines. Tailored around your business processes.",
               },
               {
                 title: "Branding",
-                text: "Graphic design, animation, and marketing",
+                text: "Hand-crafted graphic design, animation, and marketing materials. Built to help your business tell the right story.",
               },
             ].map((item, i) => (
               <div
                 key={item.title}
-                className={`group border-b border-black/20 py-8 transition-all duration-300 reveal${servicesVisible ? " visible" : ""}`}
+                className={`group border-b border-black/20 py-8 transition-all duration-300 reveal cursor-pointer${servicesVisible ? " visible" : ""}`}
                 style={{ transitionDelay: servicesVisible ? `${i * 80}ms` : "0ms" }}
+                onClick={() => setOpenServiceIndex(openServiceIndex === i ? null : i)}
               >
                 <div className="flex items-center justify-between">
                   <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
                     {item.title}
                   </h3>
 
-                  <span className="text-3xl transition-transform duration-300 group-hover:rotate-45">
+                  <span className={`text-3xl transition-transform duration-300 group-hover:rotate-45${openServiceIndex === i ? " rotate-45" : ""}`}>
                     +
                   </span>
                 </div>
 
-                <div className="overflow-hidden max-h-0 opacity-0 group-hover:max-h-40 group-hover:opacity-100 transition-all duration-500">
+                <div className={`overflow-hidden transition-all duration-500 group-hover:max-h-40 group-hover:opacity-100${openServiceIndex === i ? " max-h-40 opacity-100" : " max-h-0 opacity-0"}`}>
                   <p className="pt-6 max-w-2xl text-lg leading-relaxed text-black/70">
                     {item.text}
                   </p>
@@ -225,13 +227,13 @@ export default function Home() {
           </h2>
 
           <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70 max-w-2xl mx-auto">
-            Technology should enhance human ideas, not replace them.
+            We build affordable, high quality brands, websites, and internal tools for small businesses, made by creatives who care about getting it right.
           </p>
 
           <div className="h-8" />
 
           <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70 max-w-3xl mx-auto mb-6">
-            SloppyKo. exists to help small businesses embrace modern technology while creating meaningful opportunities for the next generation of creatives.
+            And we give young creatives the chance to own real projects, end-to-end.
           </p>
 
           <div
@@ -357,33 +359,18 @@ function HeroCarousel() {
           );
         })}
 
-        {/* Desktop side buttons */}
+        {/* Prev button */}
         <button
           onClick={prevSlide}
-          className="hidden md:flex absolute left-[-44px] top-1/2 z-40 h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
+          className="flex absolute left-2 md:left-[-44px] top-1/2 z-40 h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
         >
           ‹
         </button>
 
+        {/* Next button */}
         <button
           onClick={nextSlide}
-          className="hidden md:flex absolute right-[-44px] top-1/2 z-40 h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
-        >
-          ›
-        </button>
-      </div>
-
-      {/* Mobile bottom controls */}
-      <div className="flex md:hidden justify-center gap-6 mt-6">
-        <button
-          onClick={prevSlide}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
-        >
-          ‹
-        </button>
-        <button
-          onClick={nextSlide}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
+          className="flex absolute right-2 md:right-[-44px] top-1/2 z-40 h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
         >
           ›
         </button>

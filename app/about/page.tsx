@@ -6,6 +6,7 @@
       image: "kieran.png",
       bio: "Quixotic grinder. He's quirky, driven, and has enough energy to power a small suburb.",
       skills: ["Next.js", "PostgreSQL", "|", "Development", "Brand Strategy"],
+      schools: ["UCSB", "Cal Poly, SLO"],
     },
     {
       role: "Director of Technology",
@@ -13,6 +14,7 @@
       image: "eddy.png",
       bio: "Legendary problem solver. He once climbed a hill so many times it equaled the height of Everest.",
       skills: ["Systems Engineering", "Docker", "Linux", "C++", "|"],
+      schools: ["UCSB"],
     },
     {
       role: "Marketing PM",
@@ -20,6 +22,7 @@
       image: "allison.png",
       bio: "Elite organizer (has 3 personal calendars with exclusive to-do lists). When not working, she's probably doodling or ordering another matcha.",
       skills: ["Adobe Illustrator", "Canva", "Marketing"],
+      schools: ["Cal Poly, SLO"],
     },
     {
       role: "Graphic Design",
@@ -27,6 +30,7 @@
       image: "abigail.png",
       bio: "Brilliant graphic designer whose passionate about sustainability and creative storytelling.",
       skills: ["Adobe Illustrator", "Figma", "|", "Graphic Design"],
+      schools: ["Cal Poly, SLO"],
     },
     {
       role: "Photography & Sound",
@@ -34,6 +38,7 @@
       image: "jordan.jpg",
       bio: "Passion maxxer. He'll never stop exploring experimental multi-media storytelling.",
       skills: ["Adobe Premiere Pro", "DaVinci Resolve", "Lightroom"],
+      schools: ["Cal Poly, SLO"],
     },
     {
       role: "Marketing",
@@ -41,6 +46,7 @@
       image: "karol.png",
       bio: "Destined for the red carpet. She approaches life with an artistic mindset.",
       skills: ["Canva", "Social Media Marketing", "Adobe Photoshop"],
+      schools: ["Cal Poly, SLO"],
     },
   ];
 
@@ -52,8 +58,12 @@
         </p>
 
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl mb-10">
-          Human Creativity Still Matters.
+          Don't Let The Name Fool You.
         </h1>
+
+        <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70 max-w-2xl">
+          SloppyKo is a San Luis Obispo creative studio offering branding, web design, and application development for small businesses across California.
+        </p>
 
       </section>
 
@@ -63,9 +73,9 @@
 
           <div className="grid md:grid-cols-3 gap-10 md:gap-16">
             {[
-              ["Real Experience", "Everyone needs purpose. SloppyKo. helps young creatives gain real-world experience and develop their portfolios."],
-              ["Human Creativity", "We love AI for accelerating technical execution, but creative direction is still very human. We intend to keep it that way."],
-              ["Accessibility", "Running a small business is hard. Businesses deserve access to fresh ideas and practical technological solutions."],
+              ["Experience", "Everyone needs purpose. SloppyKo. helps young creatives gain real-world experience and develop their portfolios."],
+              ["Partnership", "Business is personal. We show up, get to know you, and stick around. No invisible transactions."],
+              ["Affordability", "Operating a small business is expensive. They deserve access to high quality, affordable creative services."],
             ].map(([title, text]) => (
               <div key={title}>
                 <h3 className="text-3xl font-semibold mb-6">{title}</h3>
@@ -95,7 +105,10 @@
                   {member.role}
                 </p>
 
-                <h3 className="text-2xl font-semibold mb-4">{member.name}</h3>
+                <h3 className="text-2xl font-semibold mb-1">{member.name}</h3>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#f4f1ea]/40 mb-4">
+                  {member.schools.join("  ·  ")}
+                </p>
 
                 <p className="text-gray-300 leading-relaxed mb-4">
                   {member.bio}
