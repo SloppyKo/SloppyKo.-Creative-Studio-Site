@@ -75,7 +75,7 @@
             {[
               ["Experience", "Everyone needs purpose. SloppyKo. helps young creatives gain real-world experience and develop their portfolios."],
               ["Partnership", "Business is personal. We show up, get to know you, and stick around. No invisible transactions."],
-              ["Affordability", "Operating a small business is expensive. They deserve access to high quality, affordable creative services."],
+              ["Affordability", "Operating a small business is expensive. They deserve access to affordable creative services."],
             ].map(([title, text]) => (
               <div key={title}>
                 <h3 className="text-3xl font-semibold mb-6">{title}</h3>
