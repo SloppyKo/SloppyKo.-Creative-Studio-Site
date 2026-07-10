@@ -32,7 +32,7 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-20 pb-16 md:pb-24 flex flex-col items-center text-center">
         <h1
           className="fade-in-up text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-10 w-full"
-          style={{ animationDelay: "0ms" }}
+          style={{ animationDelay: "200ms" }}
         >
           Keep Creativity
           <br />
@@ -41,14 +41,14 @@ export default function Home() {
 
         <p
           className="fade-in-up text-xl text-gray-300 leading-relaxed mb-8 max-w-xl"
-          style={{ animationDelay: "150ms" }}
+          style={{ animationDelay: "350ms" }}
         >
           Branding, websites, and application development powered by human creativity.
         </p>
 
         <div
           className="fade-in-up flex flex-col sm:flex-row gap-4 mb-24"
-          style={{ animationDelay: "300ms" }}
+          style={{ animationDelay: "500ms" }}
         >
           <a
             href="#contact"
@@ -72,7 +72,7 @@ export default function Home() {
           aria-label="Scroll to services"
         >
           <svg
-            className="w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 transition-all duration-300"
+            className="arrow-throb w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 group-hover:[animation-play-state:paused] transition-all duration-300"
             fill="none"
             stroke="currentColor"
             strokeWidth={2}
@@ -142,7 +142,7 @@ export default function Home() {
               aria-label="Scroll to featured project"
             >
               <svg
-                className="w-4 h-4 text-black/40 group-hover:text-black/70 group-hover:translate-y-0.5 transition-all duration-300"
+                className="arrow-throb w-4 h-4 text-black/40 group-hover:text-black/70 group-hover:translate-y-0.5 group-hover:[animation-play-state:paused] transition-all duration-300"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth={2}
@@ -202,7 +202,7 @@ export default function Home() {
             aria-label="Explore portal features"
           >
             <svg
-              className="w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 transition-all duration-300"
+              className="arrow-throb w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 group-hover:[animation-play-state:paused] transition-all duration-300"
               fill="none"
               stroke="currentColor"
               strokeWidth={2}
