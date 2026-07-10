@@ -11,8 +11,10 @@ const navLinks = [
 
 export default function SiteNav() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [constructionOpen, setConstructionOpen] = useState(false);
 
   return (
+    <>
     <nav className="sticky top-0 z-50 bg-[#11131a]/85 backdrop-blur-md border-b border-white/10">
       <div className="relative flex items-center justify-between px-4 md:px-8 py-4 max-w-7xl mx-auto">
         <Link href="/">
@@ -23,13 +25,17 @@ export default function SiteNav() {
           />
         </Link>
 
-        <div className="absolute left-1/2 -translate-x-1/2">
+        <button
+          onClick={() => setConstructionOpen(true)}
+          className="absolute left-1/2 -translate-x-1/2"
+          aria-label="Boy Seismic"
+        >
           <img
             src="/images/Boy Seismic_White Outline.png"
             alt="Boy Seismic"
             className="h-10 w-auto opacity-90"
           />
-        </div>
+        </button>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8 text-sm text-[#f4f1ea]/80">
@@ -85,5 +91,30 @@ export default function SiteNav() {
         </div>
       </div>
     </nav>
+
+    {/* Construction modal */}
+    {constructionOpen && (
+      <div
+        className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+        onClick={() => setConstructionOpen(false)}
+      >
+        <div
+          className="relative max-w-sm w-full rounded-2xl bg-[#1a1d27] border border-white/10 p-8 pt-12 text-center shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button
+            onClick={() => setConstructionOpen(false)}
+            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-[#ff5c6c] text-lg"
+            aria-label="Close"
+          >
+            ×
+          </button>
+          <p className="text-lg text-[#f4f1ea] leading-relaxed">
+            Ooopsie! 🙈 This section is still under construction. Please come back later!
+          </p>
+        </div>
+      </div>
+    )}
+    </>
   );
 }
