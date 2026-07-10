@@ -175,6 +175,25 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Scroll arrow */}
+        <div className="flex justify-center mt-10 relative z-10">
+          <a
+            href="#portal-details"
+            className="group flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+            aria-label="Explore portal features"
+          >
+            <svg
+              className="w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 transition-all duration-300"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+
         {/* Right-edge fade */}
         <div className="absolute inset-y-0 right-0 w-40 pointer-events-none bg-gradient-to-l from-[#11131a] to-transparent" />
         {/* Bottom fade into next section */}
