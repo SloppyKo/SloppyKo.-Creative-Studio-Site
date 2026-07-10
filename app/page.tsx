@@ -133,25 +133,6 @@ export default function Home() {
               </div>
             ))}
           </div>
-
-          {/* Scroll cue */}
-          <div className="flex justify-center mt-16">
-            <a
-              href="#featured-application"
-              className="group flex items-center justify-center w-11 h-11 rounded-full border border-black/15 bg-black/5 hover:bg-black/10 hover:border-black/30 transition-all duration-300"
-              aria-label="Scroll to featured project"
-            >
-              <svg
-                className="arrow-throb w-4 h-4 text-black/40 group-hover:text-black/70 group-hover:translate-y-0.5 group-hover:[animation-play-state:paused] transition-all duration-300"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-          </div>
         </div>
       </section>
 
@@ -192,25 +173,6 @@ export default function Home() {
               priority
             />
           </div>
-        </div>
-
-        {/* Scroll arrow */}
-        <div className="flex justify-center mt-10 relative z-10">
-          <a
-            href="#portal-details"
-            className="group flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
-            aria-label="Explore portal features"
-          >
-            <svg
-              className="arrow-throb w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 group-hover:[animation-play-state:paused] transition-all duration-300"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-            </svg>
-          </a>
         </div>
 
         {/* Right-edge fade */}
