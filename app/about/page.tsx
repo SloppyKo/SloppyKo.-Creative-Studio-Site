@@ -62,7 +62,7 @@
         </h1>
 
         <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70 max-w-2xl">
-          SloppyKo is a San Luis Obispo creative studio offering branding, web design, and application development for small businesses across California.
+          SloppyKo is a San Luis Obispo based creative studio offering branding, web design, and application development for small businesses.
         </p>
 
       </section>
