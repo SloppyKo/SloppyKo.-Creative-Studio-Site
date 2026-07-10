@@ -21,26 +21,6 @@ function useScrollReveal(threshold = 0.15) {
   return [ref, visible] as const;
 }
 
-const heroSlides: { label: string; image: string; rawImage?: boolean; phoneMockup?: boolean; liveUrl?: string; clickVideo?: boolean }[] = [
-  {
-    label: "Application Development",
-    image: "/images/page hero/khalo hero.png",
-    rawImage: true,
-    clickVideo: true,
-  },
-  {
-    label: "Website Creation",
-    image: "/images/radiantlybare_iphone.webp",
-    phoneMockup: true,
-    liveUrl: "https://www.radiantlybare.com",
-  },
-  {
-    label: "Brand Design",
-    image: "/images/hoodie_screenshot.webp",
-    rawImage: true,
-  },
-];
-
 export default function Home() {
   const [servicesRef, servicesVisible] = useScrollReveal(0.1);
   const [missionRef, missionVisible] = useScrollReveal(0.2);
@@ -49,48 +29,58 @@ export default function Home() {
   return (
     <main>
       {/* HERO */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-20 pb-24 md:pb-56 grid md:grid-cols-[1.3fr_0.7fr] gap-12 items-center">
-        <div>
-          <h1
-            className="fade-in-up text-5xl sm:text-6xl md:text-7xl font-bold leading-[0.95] mb-10 max-w-4xl"
-            style={{ animationDelay: "0ms" }}
-          >
-            Keep Creativity
-            <br />
-            <span className="text-[#EACE76]">Human</span>
-          </h1>
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-16 md:pt-20 pb-16 md:pb-24 flex flex-col items-center text-center">
+        <h1
+          className="fade-in-up text-6xl sm:text-7xl md:text-7xl lg:text-8xl font-bold leading-[0.95] mb-10 w-full"
+          style={{ animationDelay: "0ms" }}
+        >
+          Keep Creativity
+          <br />
+          <span className="text-[#EACE76]">Human</span>
+        </h1>
 
-          <p
-            className="fade-in-up text-xl text-gray-300 leading-relaxed mb-8 max-w-xl"
-            style={{ animationDelay: "150ms" }}
-          >
-            Branding, websites, and application development powered by human creativity.
-          </p>
+        <p
+          className="fade-in-up text-xl text-gray-300 leading-relaxed mb-8 max-w-xl"
+          style={{ animationDelay: "150ms" }}
+        >
+          Branding, websites, and application development powered by human creativity.
+        </p>
 
-          <div
-            className="fade-in-up flex flex-col sm:flex-row gap-4"
-            style={{ animationDelay: "300ms" }}
+        <div
+          className="fade-in-up flex flex-col sm:flex-row gap-4 mb-24"
+          style={{ animationDelay: "300ms" }}
+        >
+          <a
+            href="#contact"
+            className="inline-flex h-10 w-36 items-center justify-center bg-[#4f8cff] text-white rounded-full hover:opacity-90 hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
           >
-            <a
-              href="#contact"
-              className="inline-flex h-10 w-36 items-center justify-center bg-[#4f8cff] text-white rounded-full hover:opacity-90 hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
-            >
-              Contact
-            </a>
+            Contact
+          </a>
 
-            <a
-              href="#services"
-              className="inline-flex h-10 w-36 items-center justify-center border border-white/20 rounded-full hover:bg-white/5 hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
-            >
-              Services
-            </a>
-          </div>
+          <a
+            href="#services"
+            className="inline-flex h-10 w-36 items-center justify-center border border-white/20 rounded-full hover:bg-white/5 hover:scale-[1.04] active:scale-[0.97] transition-all duration-200"
+          >
+            Services
+          </a>
         </div>
 
-        <div className="relative flex items-center justify-center w-full">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square bg-[#4f8cff]/20 blur-3xl rounded-full pointer-events-none"></div>
-          <HeroCarousel />
-        </div>
+        {/* Scroll cue */}
+        <a
+          href="#services"
+          className="group flex items-center justify-center w-11 h-11 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+          aria-label="Scroll to services"
+        >
+          <svg
+            className="w-4 h-4 text-white/50 group-hover:text-white/80 group-hover:translate-y-0.5 transition-all duration-300"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
       </section>
 
       {/* WHAT WE DO */}
@@ -101,7 +91,7 @@ export default function Home() {
           </h2>
 
           <p className="text-lg md:text-xl leading-relaxed text-black/60 max-w-2xl mb-16">
-            We're a San Luis Obispo based creative studio serving small businesses across California's Central Coast, Central Valley, and beyond. We build creative and technical solutions around the way your small business already operates.
+            We are a San Luis Obispo based creative studio that builds creative and technical solutions around the way your small business already operates.
           </p>
 
           <div ref={servicesRef} className="space-y-8">
@@ -142,6 +132,25 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Scroll cue */}
+          <div className="flex justify-center mt-16">
+            <a
+              href="#featured-application"
+              className="group flex items-center justify-center w-11 h-11 rounded-full border border-black/15 bg-black/5 hover:bg-black/10 hover:border-black/30 transition-all duration-300"
+              aria-label="Scroll to featured project"
+            >
+              <svg
+                className="w-4 h-4 text-black/40 group-hover:text-black/70 group-hover:translate-y-0.5 transition-all duration-300"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
@@ -253,214 +262,3 @@ export default function Home() {
   );
 }
 
-function HeroCarousel() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [videoOpen, setVideoOpen] = useState(false);
-  const [hoodieOpen, setHoodieOpen] = useState(false);
-
-  const nextSlide = () => setActiveIndex((c) => (c + 1) % heroSlides.length);
-  const prevSlide = () => setActiveIndex((c) => (c - 1 + heroSlides.length) % heroSlides.length);
-
-  return (
-    <>
-      <div className="w-full max-w-[460px] mx-auto">
-      <div className="relative z-10 w-full aspect-[340/420]">
-        {heroSlides.map((slide, index) => {
-          const isActive = index === activeIndex;
-          const isNext = index === (activeIndex + 1) % heroSlides.length;
-          const isPrev = index === (activeIndex - 1 + heroSlides.length) % heroSlides.length;
-          let positionClass = "translate-x-0 translate-y-10 scale-75 opacity-0 z-0 blur-sm";
-          if (isActive) positionClass = "translate-x-0 translate-y-0 scale-100 opacity-100 z-30 blur-0";
-          else if (isNext) positionClass = "translate-x-16 translate-y-8 scale-75 opacity-45 z-10 blur-[1px]";
-          else if (isPrev) positionClass = "-translate-x-16 translate-y-8 scale-75 opacity-45 z-10 blur-[1px]";
-
-          return (
-            <div
-              key={slide.label}
-              className={`absolute inset-0 transition-all duration-700 ease-out ${positionClass}`}
-            >
-              {slide.rawImage ? (
-                <>
-                  <div className="relative h-full w-full flex items-center justify-center">
-                    <img
-                      src={slide.image}
-                      alt={slide.label}
-                      className={`h-full w-full object-contain scale-[1.18] transition-transform duration-300 ${isActive ? "cursor-pointer hover:scale-[1.22]" : ""}`}
-                      onClick={isActive ? () => slide.clickVideo ? setVideoOpen(true) : setHoodieOpen(true) : undefined}
-                    />
-                    {isActive && slide.clickVideo && (
-                      <div
-                        className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none"
-                        style={{ paddingBottom: "8%" }}
-                      >
-                        <div className="w-12 h-12 rounded-full bg-white/15 backdrop-blur-sm border border-white/30 flex items-center justify-center">
-                          <svg className="w-5 h-5 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M8 5v14l11-7z" />
-                          </svg>
-                        </div>
-                        <p className="mt-2 text-[9px] uppercase tracking-widest text-white/60">Watch Demo</p>
-                      </div>
-                    )}
-                  </div>
-                  <p className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-white">
-                    {slide.label}
-                  </p>
-                </>
-              ) : slide.phoneMockup ? (
-                <>
-                  <div className="flex flex-col items-center justify-center h-full">
-                    <div
-                      className="relative rounded-[36px] p-[4px] mx-auto w-[70%]"
-                      style={{
-                        background: "linear-gradient(160deg, #c0b8b0 0%, #787068 20%, #b2aaa2 42%, #6a6258 62%, #a8a098 80%, #c4bcb4 100%)",
-                        boxShadow: "0 0 0 1px rgba(255,255,255,0.18), 0 24px 60px rgba(0,0,0,0.75), inset 0 1px 0 rgba(255,255,255,0.45), inset 0 -1px 0 rgba(0,0,0,0.28)",
-                      }}
-                    >
-                      <div
-                        className="relative rounded-[33px] bg-black"
-                        style={{ aspectRatio: "9/18", clipPath: "inset(0 round 33px)" }}
-                      >
-                        {slide.liveUrl ? (
-                          <PhoneEmbed src={slide.liveUrl} />
-                        ) : slide.image ? (
-                          <img
-                            src={slide.image}
-                            alt={slide.label}
-                            className="absolute inset-0 w-full h-full object-cover object-top"
-                          />
-                        ) : null}
-                        <div className="absolute bottom-[8px] left-1/2 -translate-x-1/2 w-[80px] h-[3px] rounded-full bg-white/35 z-10" />
-                      </div>
-                    </div>
-                  </div>
-                  <p className="absolute bottom-[-58px] left-0 right-0 text-center text-xs uppercase tracking-[0.22em] text-white z-40">
-                    {slide.label}
-                  </p>
-                </>
-              ) : (
-                <>
-                  <div className="rounded-3xl border border-white/10 bg-white/5 p-3 shadow-2xl backdrop-blur-sm">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-[#11131a]">
-                      {slide.image && (
-                        <img
-                          src={slide.image}
-                          alt={slide.label}
-                          className="h-full w-full object-contain p-2"
-                        />
-                      )}
-                    </div>
-                  </div>
-                  <p className="mt-4 text-center text-xs uppercase tracking-[0.22em] text-white">
-                    {slide.label}
-                  </p>
-                </>
-              )}
-            </div>
-          );
-        })}
-
-        {/* Prev button */}
-        <button
-          onClick={prevSlide}
-          className="flex absolute left-2 md:left-[-44px] top-1/2 z-40 h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
-        >
-          ‹
-        </button>
-
-        {/* Next button */}
-        <button
-          onClick={nextSlide}
-          className="flex absolute right-2 md:right-[-44px] top-1/2 z-40 h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-[#11131a]/80 text-white backdrop-blur hover:bg-white/10 transition"
-        >
-          ›
-        </button>
-      </div>
-      </div>
-
-      {/* Hoodie lightbox */}
-      {hoodieOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 md:p-8"
-          onClick={() => setHoodieOpen(false)}
-        >
-          <div
-            className="relative max-w-xl w-full"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setHoodieOpen(false)}
-              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-white text-lg"
-            >
-              ×
-            </button>
-            <img
-              src="/images/hoodie_screenshot.webp"
-              alt="Brand Design"
-              className="w-full rounded-2xl"
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Video modal */}
-      {videoOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 md:p-8"
-          onClick={() => setVideoOpen(false)}
-        >
-          <div
-            className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl bg-[#0d0f14]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              onClick={() => setVideoOpen(false)}
-              className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-white text-lg"
-            >
-              ×
-            </button>
-            <video
-              src="/images/receipt%20tool.mp4"
-              controls
-              autoPlay
-              className="w-full"
-            />
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-function PhoneEmbed({ src }: { src: string }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [scale, setScale] = useState<number | null>(null);
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const ro = new ResizeObserver(([entry]) => {
-      setScale(entry.contentRect.width / 560);
-    });
-    ro.observe(el);
-    return () => ro.disconnect();
-  }, []);
-
-  return (
-    <div ref={containerRef} className="absolute inset-0">
-      {scale !== null && (
-        <iframe
-          src={src}
-          title="live site"
-          style={{
-            display: "block",
-            border: "none",
-            width: "560px",
-            height: "1120px",
-            transformOrigin: "top left",
-            transform: `scale(${scale})`,
-          }}
-        />
-      )}
-    </div>
-  );
-}
