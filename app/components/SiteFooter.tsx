@@ -10,7 +10,7 @@ export default function SiteFooter() {
 
         <div className="flex gap-4 md:gap-8 text-sm">
           <a href="https://www.instagram.com/sloppykocreativestudio/" target="_blank" rel="noopener noreferrer" className="hover:text-[#f4f1ea] transition-colors duration-200">Instagram</a>
-          <a href="https://www.linkedin.com/company/sloppyko" target="_blank" rel="noopener noreferrer" className="hover:text-[#f4f1ea] transition-colors duration-200">LinkedIn</a>
+          <a href="https://www.linkedin.com/in/kieran-apgar-518b59196/" target="_blank" rel="noopener noreferrer" className="hover:text-[#f4f1ea] transition-colors duration-200">LinkedIn</a>
           <a href="/portfolio" className="hover:text-[#f4f1ea] transition-colors duration-200">Portfolio</a>
         </div>
       </div>
@@ -23,7 +23,7 @@ export default function SiteFooter() {
         />
         <p className="text-center">
           Built by SloppyKo. Creative Studio &copy; 2026 All rights reserved
-          &nbsp;|&nbsp; 0.1.1 &nbsp;|&nbsp; July 10, 2026
+          &nbsp;|&nbsp; 0.2.1 &nbsp;|&nbsp; July 12, 2026
         </p>
       </div>
     </footer>
