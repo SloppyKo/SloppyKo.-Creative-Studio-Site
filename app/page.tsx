@@ -163,7 +163,7 @@ export default function Home() {
 
           <div className="shrink-0 w-full md:w-[78vw] relative md:-ml-36 md:-mt-16">
             <Image
-              src="/images/hero/laptopfinal3.png"
+              src="/images/hero/laptopfinal4.png"
               alt="Operations Portal Dashboard"
               width={2821}
               height={1853}
