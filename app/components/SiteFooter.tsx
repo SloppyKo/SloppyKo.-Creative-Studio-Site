@@ -23,7 +23,7 @@ export default function SiteFooter() {
         />
         <p className="text-center">
           Built by SloppyKo. Creative Studio &copy; 2026 All rights reserved
-          &nbsp;|&nbsp; 0.2.1 &nbsp;|&nbsp; July 12, 2026
+          &nbsp;|&nbsp; 0.2.2 &nbsp;|&nbsp; July 14, 2026
         </p>
       </div>
     </footer>
