@@ -11,7 +11,7 @@ const projects = [
     tags: ["UX/UI", "SEO", "Domain + Hosting"],
     techStack: ["Next.js", "Tailwind CSS"],
     liveItems: [
-      { label: "Esthetician Studio", url: "https://www.radiantlybare.com" },
+      { label: "Auto Restoration Business", url: "https://www.countrycollisionhanford.com" },
     ],
     items: [],
   },
