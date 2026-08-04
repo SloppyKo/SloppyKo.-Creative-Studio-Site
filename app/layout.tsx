@@ -5,6 +5,7 @@ import SiteFooter from "./components/SiteFooter";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sloppyko.com"),
   title: "SloppyKo. Creative Studio",
   description: "Branding, websites, and application development powered by human creativity",
 };
