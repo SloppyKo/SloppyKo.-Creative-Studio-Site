@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const EMAIL = "studio@sloppyko.com";
+const EMAIL = "kieran@sloppyko.com";
 
 export default function CopyEmailButton() {
   const [copied, setCopied] = useState(false);
