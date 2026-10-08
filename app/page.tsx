@@ -91,8 +91,7 @@ export default function Home() {
           </h2>
 
           <p className="text-lg md:text-xl leading-relaxed text-black/60 max-w-2xl mb-16">
-            We are a San Luis Obispo based creative studio that builds creative and technical solutions around the way your small business already operates.
-          </p>
+            We are a creative studio serving San Luis Obispo, Hanford, and the greater Central Coast and Central Valley. We build creative and technical solutions around the way your small business already operates.          </p>
 
           <div ref={servicesRef} className="space-y-8">
             {[
