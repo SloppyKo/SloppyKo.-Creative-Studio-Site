@@ -32,14 +32,14 @@ export default function Home() {
             className="fade-in-up text-xl text-[#f4f1ea]/70 leading-relaxed mb-10 md:mb-12 max-w-2xl"
             style={{ animationDelay: "350ms" }}
           >
-            Websites, Google, social media, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.
+            Websites, Google/SEO management, social media, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.
           </p>
 
           <p
             className="fade-in-up text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-8 md:mb-10"
             style={{ animationDelay: "425ms" }}
           >
-            Built by Cal Poly &amp; UCSB Students
+            Built by Cal Poly &amp; UCSB Alumni
           </p>
 
           {/* Scroll cue */}
@@ -70,7 +70,7 @@ export default function Home() {
         />
         <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
           <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-8">
-            Success Story  ·  Web Design &amp; Google Management
+            Success Story  ·  Web Design &amp; Google/Seo Management
           </p>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-10">
@@ -115,7 +115,7 @@ export default function Home() {
               alt="Country Collision website on a laptop and phone"
               width={2400}
               height={1543}
-              sizes="(min-width: 1152px) 1152px, 100vw"
+              sizes="(min-width: 1536px) 75vw, (min-width: 1152px) 1152px, 100vw"
               style={{ width: "100%", height: "auto" }}
             />
           </a>

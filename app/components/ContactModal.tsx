@@ -211,7 +211,7 @@ export default function ContactModal() {
               className="absolute left-0 top-[4%] bottom-[4%] w-px bg-[linear-gradient(to_bottom,transparent,rgba(0,0,0,0.1)_6%,rgba(0,0,0,0.1)_94%,transparent)] hidden md:block"
             />
             {status === "sent" ? (
-              <div className="h-full min-h-[300px] flex flex-col items-center justify-center text-center gap-4">
+              <div className="h-full min-h-[18.75rem] flex flex-col items-center justify-center text-center gap-4">
                 <p className="text-2xl font-bold text-[#11131a]" role="status">Message sent!</p>
                 <p className="text-black/60 max-w-sm">
                   Someone from our team will be getting back to you very soon. :)

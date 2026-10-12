@@ -58,7 +58,7 @@ export default function InfoTip({
 
       <div
         role="tooltip"
-        className={`absolute bottom-full right-0 mb-3 w-64 max-w-[calc(100vw-2rem)] rounded-md border border-white/[0.06] bg-[#1a1d26] p-3.5 text-left text-[13px] leading-relaxed text-gray-300 shadow-2xl transition-all duration-200 z-20 ${
+        className={`absolute bottom-full right-0 mb-3 w-64 max-w-[calc(100vw-2rem)] rounded-md border border-white/[0.06] bg-[#1a1d26] p-3.5 text-left text-[0.8125rem] leading-relaxed text-gray-300 shadow-2xl transition-all duration-200 z-20 ${
           open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1 pointer-events-none"
         }`}
       >

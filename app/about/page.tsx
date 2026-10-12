@@ -94,7 +94,7 @@ export default function AboutPage() {
           </h1>
 
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight max-w-4xl mb-12 md:mb-14">
-            Don&apos;t Let The Name Fool You.
+            Let&apos;s Keep Creativity <span className="text-[#D64545]">Human</span>
           </h2>
 
           {/* Mission gets its own block so it stands out */}
@@ -150,7 +150,7 @@ export default function AboutPage() {
                 </p>
 
                 <h3 className="text-2xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#f4f1ea]/40 mb-4">
+                <p className="text-[0.625rem] uppercase tracking-[0.2em] text-[#f4f1ea]/40 mb-4">
                   {member.schools.join("  ·  ")}
                 </p>
 
@@ -165,7 +165,7 @@ export default function AboutPage() {
                     ) : (
                       <span
                         key={skill}
-                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-semibold tracking-wide text-[#f4f1ea]/50"
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[0.6875rem] font-semibold tracking-wide text-[#f4f1ea]/50"
                       >
                         {skill}
                       </span>

@@ -112,7 +112,7 @@ export default function PhotoStack() {
   }, [inView]);
 
   return (
-    <div ref={ref} aria-hidden="true" className="photo-stack relative w-full h-[380px] sm:h-[480px] md:h-[600px]">
+    <div ref={ref} aria-hidden="true" className="photo-stack relative w-full h-[23.75rem] sm:h-[30rem] md:h-[37.5rem]">
       {cards.map((card, i) => {
         const item = ITEMS[card.item % ITEMS.length]; // stays valid if the list changes
         const depth = cards.length - 1 - i; // 0 = top piece
@@ -125,11 +125,11 @@ export default function PhotoStack() {
             style={
               {
                 "--rot": `${card.rot}deg`,
-                "--dx": `${card.dx}px`,
-                "--dy": `${card.dy}px`,
+                "--dx": `${card.dx / 16}rem`,
+                "--dy": `${card.dy / 16}rem`,
                 "--s": card.scale,
-                "--from-x": `${card.fromX}px`,
-                "--from-y": `${card.fromY}px`,
+                "--from-x": `${card.fromX / 16}rem`,
+                "--from-y": `${card.fromY / 16}rem`,
                 "--from-rot": `${card.fromRot}deg`,
                 "--from-s": card.fromScale,
                 "--ratio": item.w / item.h,

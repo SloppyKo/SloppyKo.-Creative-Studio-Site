@@ -38,9 +38,10 @@ export async function POST(request: Request) {
     return Response.json({ error: "Please enter a valid email." }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
+  // Resend API key, stored in Vercel as SloppyKo_Contact_Form (case-sensitive).
+  const apiKey = process.env.SloppyKo_Contact_Form;
   if (!apiKey) {
-    console.error("RESEND_API_KEY is not set");
+    console.error("SloppyKo_Contact_Form (Resend API key) is not set");
     return Response.json({ error: "Email is not configured." }, { status: 500 });
   }
 

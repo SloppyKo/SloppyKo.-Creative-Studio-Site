@@ -40,7 +40,7 @@ export default function PortfolioNav() {
   }
 
   return (
-    <div className="sticky top-[72px] z-40 border-b border-white/10 bg-[#11131a]/90 backdrop-blur-md">
+    <div className="sticky top-[4.5rem] z-40 border-b border-white/10 bg-[#11131a]/90 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex items-center gap-1 overflow-x-auto scrollbar-none">
           {pods.map(({ label, id, color }) => {

@@ -42,7 +42,11 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 5rem;
+  /* Whole-site scale for big monitors. Sizes are in rem, so growing the root font
+     grows text, spacing, and content width together. Normal (16px, or the visitor's
+     own browser setting) up to ~1536px wide, then scales with the window (capped at 1.75x). */
+  font-size: clamp(100%, calc(100vw / 96), 175%);
 }
 
 body {
@@ -227,31 +231,31 @@ nav {
 /* Photo stack: unframed pieces tossed onto a messy pile (level, varied positions).
    --spread shrinks the scatter on small screens. */
 .photo-stack {
-  --max-w: 320px;
-  --max-h: 270px;
+  --max-w: 20rem;
+  --max-h: 16.875rem;
   --spread: 0.5;
 }
 
 @media (min-width: 640px) {
   .photo-stack {
-    --max-w: 460px;
-    --max-h: 370px;
+    --max-w: 28.75rem;
+    --max-h: 23.125rem;
     --spread: 0.75;
   }
 }
 
 @media (min-width: 768px) {
   .photo-stack {
-    --max-w: 500px;
-    --max-h: 400px;
+    --max-w: 31.25rem;
+    --max-h: 25rem;
     --spread: 0.85;
   }
 }
 
 @media (min-width: 1024px) {
   .photo-stack {
-    --max-w: 600px;
-    --max-h: 460px;
+    --max-w: 37.5rem;
+    --max-h: 28.75rem;
     --spread: 1.15;
   }
 }
