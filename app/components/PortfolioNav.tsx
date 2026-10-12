@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 
 const pods = [
-  { label: "Website Creation", id: "website-creation", color: "#EACE76" },
-  { label: "Application Development", id: "application-development", color: "#4f8cff" },
-  { label: "Brand Design", id: "branding-design", color: "#ff5c6c" },
+  { label: "Country Collision", id: "country-collision", color: "#D64545" },
+  { label: "Radiantly Bare", id: "radiantly-bare", color: "#D64545" },
+  { label: "Kahlo", id: "kahlo", color: "#D64545" },
+  { label: "Operations Portal", id: "operations-portal", color: "#D64545" },
 ];
 
 export default function PortfolioNav() {
@@ -40,7 +41,7 @@ export default function PortfolioNav() {
 
   return (
     <div className="sticky top-[72px] z-40 border-b border-white/10 bg-[#11131a]/90 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-8">
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex items-center gap-1 overflow-x-auto scrollbar-none">
           {pods.map(({ label, id, color }) => {
             const isActive = activeId === id;

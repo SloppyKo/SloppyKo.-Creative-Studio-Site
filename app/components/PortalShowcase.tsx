@@ -8,28 +8,28 @@ const slides = [
     blurb:
       "Centralize data by client: active projects, contacts, and financial history.",
     color: "#EACE76",
-    images: ["/images/featured/clientdb_new.png"],
+    images: ["/images/featured/clientdb_new.webp"],
   },
   {
     title: "Project Operations",
     blurb:
       "Manage projects from one screen with visibility into project details, actions, agreement data, and invoices.",
     color: "#4f8cff",
-    images: ["/images/featured/action_new.png"],
+    images: ["/images/featured/action_new.webp"],
   },
   {
     title: "Agreement & Invoice Management",
     blurb:
       "Streamline agreement and invoice generation, client signatures, and record retention with just a few clicks.",
-    color: "#ff5c6c",
-    images: ["/images/featured/contract_new.png"],
+    color: "#D64545",
+    images: ["/images/featured/contract_new.webp"],
   },
   {
     title: "KPI Dashboard",
     blurb:
       "See revenue, due date slips, and client trends in one clear operational dashboard.",
     color: "#9ca3af",
-    images: ["/images/featured/dashboard_new.png"],
+    images: ["/images/featured/dashboard_new.webp"],
   },
 ];
 
@@ -63,7 +63,7 @@ export default function PortalShowcase() {
 
   return (
     <>
-      <section id="portal-details" className="py-16 md:py-32 px-4 md:px-8">
+      <section id="portal-details" className="pt-16 md:pt-32 pb-28 md:pb-56 px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="flex gap-20 items-start">
 
@@ -181,18 +181,6 @@ export default function PortalShowcase() {
                   </p>
                 </div>
               ))}
-
-              <div className="md:min-h-[60vh] flex flex-col items-center justify-center py-12 md:py-16">
-                <p className="text-lg text-[#f4f1ea]/60 max-w-xl mb-8 text-center">
-                  Need a custom solution for your business?
-                </p>
-                <a
-                  href="/#contact"
-                  className="inline-block rounded-full bg-[#4f8cff] px-6 py-3 text-sm font-black text-white transition hover:opacity-90 hover:scale-[1.04] active:scale-[0.97]"
-                >
-                  Contact
-                </a>
-              </div>
             </div>
 
           </div>

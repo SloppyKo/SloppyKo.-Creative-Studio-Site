@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { href: "/#services", label: "Services" },
+  { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
 ] as const;
@@ -104,7 +104,7 @@ export default function SiteNav() {
         >
           <button
             onClick={() => setConstructionOpen(false)}
-            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-[#ff5c6c] text-lg"
+            className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 transition flex items-center justify-center text-[#D64545] text-lg"
             aria-label="Close"
           >
             ×

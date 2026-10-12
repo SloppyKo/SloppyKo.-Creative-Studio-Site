@@ -1,0 +1,148 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+
+type StackItem = { src: string; w: number; h: number };
+
+const DIR = "/images/contact-collage";
+
+// Ordered so similar pieces aren't back to back.
+const ITEMS: StackItem[] = [
+  { src: `${DIR}/kahlo-final.webp`, w: 640, h: 480 },
+  { src: `${DIR}/countrycollision.webp`, w: 640, h: 460 },
+  { src: `${DIR}/hoodie-front.webp`, w: 640, h: 638 },
+  { src: `${DIR}/dashboard-new.webp`, w: 640, h: 607 },
+  { src: `${DIR}/anime-final.webp`, w: 640, h: 357 },
+  { src: `${DIR}/receiptfinal1.webp`, w: 640, h: 562 },
+  { src: `${DIR}/radiantlybare.webp`, w: 640, h: 474 },
+  { src: `${DIR}/operations-portal-phone.webp`, w: 640, h: 1153 },
+  { src: `${DIR}/dynasen-card.webp`, w: 640, h: 357 },
+  { src: `${DIR}/hoodie-back.webp`, w: 640, h: 476 },
+  { src: `${DIR}/laptopfinal4.webp`, w: 640, h: 450 },
+  { src: `${DIR}/powerappsfinal.webp`, w: 640, h: 501 },
+];
+
+const INTERVAL_MS = 900;
+const VISIBLE = 5; // pieces shown in the pile; older ones fade out
+const KEEP = VISIBLE + 2; // extra pieces kept while they fade
+
+// Where a piece lands, plus where it flies in from.
+type Card = {
+  id: number;
+  item: number;
+  rot: number;
+  dx: number;
+  dy: number;
+  scale: number;
+  fromX: number;
+  fromY: number;
+  fromRot: number;
+  fromScale: number;
+  duration: number;
+  dropped: boolean;
+};
+
+const rand = (min: number, max: number) => min + Math.random() * (max - min);
+
+function randomCard(id: number, item: number): Card {
+  // Roughly 1 in 4 pieces lands far off-center.
+  const sloppy = Math.random() < 0.25;
+  const rot = 0; // pieces always land level; variety comes from position
+  const angle = rand(0, Math.PI * 2); // fly in from any direction
+  const distance = rand(120, 260);
+  return {
+    id,
+    item,
+    rot,
+    dx: sloppy ? rand(-130, 130) : rand(-60, 60),
+    dy: sloppy ? rand(-70, 70) : rand(-35, 35),
+    scale: rand(0.85, 1.08),
+    fromX: Math.cos(angle) * distance,
+    fromY: Math.sin(angle) * distance - 60,
+    fromRot: rand(-6, 6), // slight turn mid-flight, settles level
+    fromScale: rand(1.15, 1.4),
+    duration: rand(0.55, 0.95),
+    dropped: true,
+  };
+}
+
+// Fixed starting pile (no randomness during render, so server and client match).
+const base = { fromX: 0, fromY: 0, fromRot: 0, fromScale: 1, duration: 0, dropped: false };
+const INITIAL: Card[] = [
+  { ...base, id: 0, item: 0, rot: 0, dx: -90, dy: 25, scale: 0.95 },
+  { ...base, id: 1, item: 1, rot: 0, dx: 75, dy: -30, scale: 1 },
+  { ...base, id: 2, item: 2, rot: 0, dx: -15, dy: 15, scale: 0.9 },
+];
+
+export default function PhotoStack() {
+  const [cards, setCards] = useState<Card[]>(INITIAL);
+  const [inView, setInView] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const next = useRef({ id: INITIAL.length, item: INITIAL.length });
+
+  // Only animate while the stack is on screen.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!inView) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    // Warm the cache so each piece has its image before it lands.
+    const preload = (i: number) => {
+      new window.Image().src = ITEMS[i % ITEMS.length].src;
+    };
+    preload(next.current.item);
+
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      const { id, item } = next.current;
+      const card = randomCard(id, item % ITEMS.length);
+      next.current = { id: id + 1, item: item + 1 };
+      preload(item + 1);
+      setCards((prev) => [...prev, card].slice(-KEEP));
+    }, INTERVAL_MS);
+
+    return () => window.clearInterval(timer);
+  }, [inView]);
+
+  return (
+    <div ref={ref} aria-hidden="true" className="photo-stack relative w-full h-[380px] sm:h-[480px] md:h-[600px]">
+      {cards.map((card, i) => {
+        const item = ITEMS[card.item % ITEMS.length]; // stays valid if the list changes
+        const depth = cards.length - 1 - i; // 0 = top piece
+        return (
+          <div
+            key={card.id}
+            className={`photo-stack-card ${card.dropped ? "photo-stack-drop" : ""} ${
+              depth >= VISIBLE ? "opacity-0" : "opacity-100"
+            }`}
+            style={
+              {
+                "--rot": `${card.rot}deg`,
+                "--dx": `${card.dx}px`,
+                "--dy": `${card.dy}px`,
+                "--s": card.scale,
+                "--from-x": `${card.fromX}px`,
+                "--from-y": `${card.fromY}px`,
+                "--from-rot": `${card.fromRot}deg`,
+                "--from-s": card.fromScale,
+                "--ratio": item.w / item.h,
+                animationDuration: card.dropped ? `${card.duration}s` : undefined,
+                zIndex: i,
+              } as React.CSSProperties
+            }
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={item.src} alt="" draggable={false} className="block w-full h-full object-contain" />
+          </div>
+        );
+      })}
+    </div>
+  );
+}

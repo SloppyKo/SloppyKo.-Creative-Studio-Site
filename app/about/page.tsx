@@ -1,9 +1,36 @@
-﻿export default function AboutPage() {
+﻿import type { Metadata } from "next";
+import Image from "next/image";
+
+const DESCRIPTION =
+  "SloppyKo is a creative studio in Hanford and San Luis Obispo where Cal Poly and UCSB students build websites, Google profiles, and brands for small businesses.";
+
+export const metadata: Metadata = {
+  title: "About Our Web Design Studio",
+  description: DESCRIPTION,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    type: "website",
+    siteName: "SloppyKo",
+    title: "About Our Web Design Studio | SloppyKo",
+    description: DESCRIPTION,
+    url: "/about",
+    locale: "en_US",
+    images: [{ url: "/opengraph-image.png", width: 1200, height: 630, alt: "SloppyKo Creative Studio logo" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Our Web Design Studio | SloppyKo",
+    description: DESCRIPTION,
+    images: [{ url: "/twitter-image.png", width: 1200, height: 630, alt: "SloppyKo Creative Studio logo" }],
+  },
+};
+
+export default function AboutPage() {
   const team = [
     {
       role: "Founder",
       name: "Kieran",
-      image: "kieran.png",
+      image: "kieran.webp",
       bio: "Quixotic grinder. He's quirky, driven, and has enough energy to power a small suburb.",
       skills: ["Next.js", "PostgreSQL", "|", "Development", "Brand Strategy"],
       schools: ["UCSB", "Cal Poly, SLO"],
@@ -11,7 +38,7 @@
     {
       role: "Director of Technology",
       name: "Eddie",
-      image: "eddy.png",
+      image: "eddy.webp",
       bio: "Legendary problem solver. He once climbed a hill so many times it equaled the height of Everest.",
       skills: ["Systems Engineering", "Docker", "Linux", "C++", "|"],
       schools: ["UCSB"],
@@ -19,7 +46,7 @@
     {
       role: "Marketing PM",
       name: "Allison",
-      image: "allison.png",
+      image: "allison.webp",
       bio: "Elite organizer (has 3 personal calendars with exclusive to-do lists). When not working, she's probably doodling or ordering another matcha.",
       skills: ["Adobe Illustrator", "Canva", "Marketing"],
       schools: ["Cal Poly, SLO"],
@@ -27,15 +54,15 @@
     {
       role: "Graphic Design",
       name: "Abigail",
-      image: "abigail.png",
-      bio: "Brilliant graphic designer whose passionate about sustainability and creative storytelling.",
+      image: "abigail.webp",
+      bio: "Brilliant graphic designer who's passionate about sustainability and creative storytelling.",
       skills: ["Adobe Illustrator", "Figma", "|", "Graphic Design"],
       schools: ["Cal Poly, SLO"],
     },
     {
       role: "Photography & Sound",
       name: "Jordan",
-      image: "jordan.jpg",
+      image: "jordan.webp",
       bio: "Passion maxxer. He'll never stop exploring experimental multi-media storytelling.",
       skills: ["Adobe Premiere Pro", "DaVinci Resolve", "Lightroom"],
       schools: ["Cal Poly, SLO"],
@@ -43,7 +70,7 @@
     {
       role: "Marketing",
       name: "Karol",
-      image: "karol.png",
+      image: "karol.webp",
       bio: "Destined for the red carpet. She approaches life with an artistic mindset.",
       skills: ["Canva", "Social Media Marketing", "Adobe Photoshop"],
       schools: ["Cal Poly, SLO"],
@@ -52,18 +79,34 @@
 
   return (
     <main>
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-28">
-        <p className="uppercase tracking-[0.3em] text-base md:text-lg text-[#f6d76a] mb-6">
-          About SloppyKo.
-        </p>
+      <section className="relative overflow-hidden">
+        {/* Slow aurora glow, same as the home page hero */}
+        <div aria-hidden="true" className="aurora">
+          <span className="aurora-glow aurora-1" />
+          <span className="aurora-glow aurora-2" />
+          <span className="aurora-glow aurora-3" />
+          <span className="aurora-glow aurora-current" />
+        </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight max-w-4xl mb-10">
-          Don't Let The Name Fool You.
-        </h1>
+        <div className="relative max-w-6xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-16 md:pb-28">
+          <h1 className="font-[Comfortaa,sans-serif] mb-4 text-sm md:text-base font-semibold uppercase tracking-[0.25em] text-[#EACE76]">
+            SloppyKo. | About our Web Design Studio
+          </h1>
 
-        <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70 max-w-2xl">
-          SloppyKo is a creative studio offering branding, web design, and application development for small businesses in San Luis Obispo, Hanford, and the greater Central Coast and Central Valley.        </p>
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight max-w-4xl mb-12 md:mb-14">
+            Don&apos;t Let The Name Fool You.
+          </h2>
 
+          {/* Mission gets its own block so it stands out */}
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold tracking-[0.2em] uppercase text-gray-500 mb-3">
+              Our Mission
+            </p>
+            <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70">
+              We&apos;re a small creative studio in Hanford and San Luis Obispo, serving the Central Valley and Central Coast. We give Cal Poly and UCSB students real projects to own from start to finish, and small businesses get quality work from real people at an affordable price.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section className="bg-[#f4f1ea] text-[#11131a] py-16 md:py-32 px-4 md:px-8">
@@ -72,9 +115,9 @@
 
           <div className="grid md:grid-cols-3 gap-10 md:gap-16">
             {[
-              ["Experience", "Everyone needs purpose. SloppyKo. helps young creatives gain real-world experience and develop their portfolios."],
-              ["Partnership", "Business is personal. We show up, get to know you, and stick around. No invisible transactions."],
-              ["Affordability", "Operating a small business is expensive. They deserve access to affordable creative services."],
+              ["Experience", "Everyone needs purpose. Our students build real portfolios with real client work."],
+              ["Partnership", "Business is personal. We shake hands, get to know you, and stick around."],
+              ["Affordability", "Operating a small business is expensive. You deserve access to creative services you can afford."],
             ].map(([title, text]) => (
               <div key={title}>
                 <h3 className="text-3xl font-semibold mb-6">{title}</h3>
@@ -92,11 +135,13 @@
           <div className="grid md:grid-cols-3 gap-x-12 gap-y-16 md:gap-y-32">
             {team.map((member) => (
               <div key={member.name} className="flex flex-col">
-                <div className="w-full aspect-[4/5] bg-white/10 rounded-[1.5rem] mb-6 overflow-hidden">
-                  <img
+                <div className="relative w-full aspect-[4/5] bg-white/10 rounded-[1.5rem] mb-6 overflow-hidden">
+                  <Image
                     src={`/images/${member.image}`}
                     alt={member.name}
-                    className="w-full h-full object-cover object-center"
+                    fill
+                    sizes="(min-width: 768px) 33vw, 100vw"
+                    className="object-cover object-center"
                   />
                 </div>
 
