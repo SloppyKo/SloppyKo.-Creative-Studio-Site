@@ -32,7 +32,7 @@ export default function Home() {
             className="fade-in-up text-xl text-[#f4f1ea]/70 leading-relaxed mb-10 md:mb-12 max-w-2xl"
             style={{ animationDelay: "350ms" }}
           >
-            Websites, Google/SEO management, social media, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.
+            Web design, Google management and SEO, social media, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.
           </p>
 
           <p

@@ -7,7 +7,7 @@ import BackToTop from "./components/BackToTop";
 import { Analytics } from "@vercel/analytics/next";
 
 const DESCRIPTION =
-  "Custom websites, Google profile management, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.";
+  "Web design, Google management and SEO, social media, and branding for small businesses in Hanford, SLO, and the Central Valley and Central Coast.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sloppyko.com"),

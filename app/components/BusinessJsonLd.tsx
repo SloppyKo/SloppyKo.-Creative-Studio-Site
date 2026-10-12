@@ -9,7 +9,7 @@ const jsonLd = {
   logo: "https://www.sloppyko.com/icon.png",
   image: "https://www.sloppyko.com/icon.png",
   description:
-    "Custom websites, Google profile management, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.",
+    "Web design, Google management and SEO, social media, and branding for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.",
   telephone: "+1-559-589-4790",
   email: "kieran@sloppyko.com",
   // Service-area business: city only, no street address.
@@ -25,8 +25,11 @@ const jsonLd = {
     { "@type": "Place", name: "Central Valley, CA" },
     { "@type": "Place", name: "Central Coast, CA" },
   ],
-  knowsAbout: ["Web Design", "Google Business Profile Management", "Social Media Marketing", "Brand Design"],
-  sameAs: ["https://www.instagram.com/sloppykocreativestudio/"],
+  knowsAbout: ["Web Design", "Google Business Profile Management", "Search Engine Optimization", "Social Media Marketing", "Brand Design"],
+  sameAs: [
+    "https://www.instagram.com/sloppykocreativestudio/",
+    "https://maps.app.goo.gl/AEwd7wtiqLXzVGCn9",
+  ],
   founder: {
     "@type": "Person",
     name: "Kieran Apgar",

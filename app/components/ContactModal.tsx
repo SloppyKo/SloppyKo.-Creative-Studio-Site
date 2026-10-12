@@ -214,7 +214,7 @@ export default function ContactModal() {
               <div className="h-full min-h-[18.75rem] flex flex-col items-center justify-center text-center gap-4">
                 <p className="text-2xl font-bold text-[#11131a]" role="status">Message sent!</p>
                 <p className="text-black/60 max-w-sm">
-                  Someone from our team will be getting back to you very soon. :)
+                  Someone from our team will be getting back to you very soon :)
                 </p>
                 <button
                   onClick={close}
