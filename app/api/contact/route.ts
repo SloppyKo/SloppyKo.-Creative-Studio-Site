@@ -64,7 +64,8 @@ export async function POST(request: Request) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: process.env.CONTACT_FROM_EMAIL ?? "SloppyKo Website <onboarding@resend.dev>",
+        // Must be on a domain verified in Resend (sloppyko.com).
+        from: process.env.CONTACT_FROM_EMAIL ?? "SloppyKo Website <website@sloppyko.com>",
         to: [TO_EMAIL],
         reply_to: email,
         subject: `New inquiry: ${business} (${name})`,
