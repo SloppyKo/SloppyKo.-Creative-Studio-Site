@@ -2,16 +2,16 @@ import type { Metadata } from "next";
 import ServicesList from "../components/ServicesList";
 
 const DESCRIPTION =
-  "Custom websites, Google Business Profile management, social media marketing, and brand design for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.";
+  "Custom websites, local SEO and Google Business Profile management, social media marketing, and brand design for small businesses in Hanford, San Luis Obispo, and across the Central Valley and Central Coast.";
 
 export const metadata: Metadata = {
-  title: "Web Design, Google, & Branding Services",
+  title: "Web Design, Local SEO, & Branding Services in Hanford & SLO",
   description: DESCRIPTION,
   alternates: { canonical: "/services" },
   openGraph: {
     type: "website",
     siteName: "SloppyKo",
-    title: "Web Design, Google, & Branding Services | SloppyKo",
+    title: "Web Design, Local SEO, & Branding Services in Hanford & SLO | SloppyKo",
     description: DESCRIPTION,
     url: "/services",
     locale: "en_US",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Design, Google, & Branding Services | SloppyKo",
+    title: "Web Design, Local SEO, & Branding Services in Hanford & SLO | SloppyKo",
     description: DESCRIPTION,
     images: [{ url: "/twitter-image.png", width: 1200, height: 630, alt: "SloppyKo Creative Studio logo" }],
   },
@@ -30,16 +30,9 @@ export default function ServicesPage() {
     <main>
       {/* INTRO */}
       <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="aurora">
-          <span className="aurora-glow aurora-1" />
-          <span className="aurora-glow aurora-2" />
-          <span className="aurora-glow aurora-3" />
-          <span className="aurora-glow aurora-current" />
-        </div>
-
         <div className="relative max-w-6xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-16 md:pb-24">
           <h1 className="font-[Comfortaa,sans-serif] mb-4 text-sm md:text-base font-semibold uppercase tracking-[0.25em] text-[#EACE76]">
-            SloppyKo. | Web Design &amp; Marketing Services
+            SloppyKo. | Web Design, Local SEO, &amp; Branding Services
           </h1>
 
           <h2 className="mb-12 md:mb-14 text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight">

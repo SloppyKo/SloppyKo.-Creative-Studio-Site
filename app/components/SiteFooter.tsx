@@ -11,8 +11,8 @@ const SOCIALS = [
 ];
 
 const PAGES = [
-  { href: "/services", label: "Services" },
   { href: "/portfolio", label: "Portfolio" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   // Any #contact link opens the contact form (see ContactModal).
   { href: "/#contact", label: "Contact" },
@@ -25,12 +25,6 @@ const dividerClass = "hidden sm:block h-4 w-px bg-[#f4f1ea]/20";
 export default function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-[#11131a] text-[#f4f1ea]/60 py-12 px-4 md:px-8 border-t border-white/10">
-      {/* Fainter echo of the hero aurora */}
-      <div aria-hidden="true" className="aurora aurora-faint">
-        <span className="aurora-glow aurora-1" />
-        <span className="aurora-glow aurora-3" />
-      </div>
-
       <div className="relative max-w-6xl mx-auto flex flex-col items-center">
         {/* Site pages */}
         <nav aria-label="Footer" className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm">

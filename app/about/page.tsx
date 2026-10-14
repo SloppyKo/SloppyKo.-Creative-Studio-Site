@@ -2,16 +2,16 @@
 import Image from "next/image";
 
 const DESCRIPTION =
-  "SloppyKo is a creative studio in Hanford and San Luis Obispo where Cal Poly and UCSB students build websites, Google profiles, and brands for small businesses.";
+  "SloppyKo is a creative studio in Hanford and San Luis Obispo where Cal Poly and UCSB students build websites, improve local SEO, and design brands for small businesses.";
 
 export const metadata: Metadata = {
-  title: "About Our Web Design Studio",
+  title: "About Our Web Design Studio in Hanford & San Luis Obispo",
   description: DESCRIPTION,
   alternates: { canonical: "/about" },
   openGraph: {
     type: "website",
     siteName: "SloppyKo",
-    title: "About Our Web Design Studio | SloppyKo",
+    title: "About Our Web Design Studio in Hanford & San Luis Obispo | SloppyKo",
     description: DESCRIPTION,
     url: "/about",
     locale: "en_US",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Our Web Design Studio | SloppyKo",
+    title: "About Our Web Design Studio in Hanford & San Luis Obispo | SloppyKo",
     description: DESCRIPTION,
     images: [{ url: "/twitter-image.png", width: 1200, height: 630, alt: "SloppyKo Creative Studio logo" }],
   },
@@ -80,21 +80,13 @@ export default function AboutPage() {
   return (
     <main>
       <section className="relative overflow-hidden">
-        {/* Slow aurora glow, same as the home page hero */}
-        <div aria-hidden="true" className="aurora">
-          <span className="aurora-glow aurora-1" />
-          <span className="aurora-glow aurora-2" />
-          <span className="aurora-glow aurora-3" />
-          <span className="aurora-glow aurora-current" />
-        </div>
-
         <div className="relative max-w-6xl mx-auto px-4 md:px-8 pt-16 md:pt-24 pb-16 md:pb-28">
           <h1 className="font-[Comfortaa,sans-serif] mb-4 text-sm md:text-base font-semibold uppercase tracking-[0.25em] text-[#EACE76]">
             SloppyKo. | About our Web Design Studio
           </h1>
 
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight max-w-4xl mb-12 md:mb-14">
-            Let&apos;s Keep Creativity <span className="text-[#D64545]">Human</span>
+            Let&apos;s Keep Creativity Human
           </h2>
 
           {/* Mission gets its own block so it stands out */}
@@ -103,7 +95,7 @@ export default function AboutPage() {
               Our Mission
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-[#f4f1ea]/70">
-              We&apos;re a small creative studio in Hanford and San Luis Obispo, serving the Central Valley and Central Coast. We give Cal Poly and UCSB students real projects to own from start to finish, and small businesses get quality work from real people at an affordable price.
+              We&apos;re a creative studio based in Hanford and San Luis Obispo, and we serve small businesses across the Central Valley and Central Coast. We give Cal Poly and UCSB students real projects to own from start to finish and ensure that small businesses have access to high quality, affordable creative services.
             </p>
           </div>
         </div>

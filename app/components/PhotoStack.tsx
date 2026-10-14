@@ -4,22 +4,20 @@ import { useState, useEffect, useRef } from "react";
 
 type StackItem = { src: string; w: number; h: number };
 
-const DIR = "/images/contact-collage";
+const DIR = "/images/contact-collage/collage2";
 
 // Ordered so similar pieces aren't back to back.
 const ITEMS: StackItem[] = [
+  { src: `${DIR}/countrycollision.webp`, w: 640, h: 434 },
+  { src: `${DIR}/portal.webp`, w: 640, h: 581 },
   { src: `${DIR}/kahlo-final.webp`, w: 640, h: 480 },
-  { src: `${DIR}/countrycollision.webp`, w: 640, h: 460 },
-  { src: `${DIR}/hoodie-front.webp`, w: 640, h: 638 },
-  { src: `${DIR}/dashboard-new.webp`, w: 640, h: 607 },
-  { src: `${DIR}/anime-final.webp`, w: 640, h: 357 },
-  { src: `${DIR}/receiptfinal1.webp`, w: 640, h: 562 },
-  { src: `${DIR}/radiantlybare.webp`, w: 640, h: 474 },
-  { src: `${DIR}/operations-portal-phone.webp`, w: 640, h: 1153 },
-  { src: `${DIR}/dynasen-card.webp`, w: 640, h: 357 },
+  { src: `${DIR}/powerapps.webp`, w: 640, h: 489 },
+  { src: `${DIR}/receipt-tool.webp`, w: 640, h: 563 },
+  { src: `${DIR}/phone.webp`, w: 640, h: 875 },
+  { src: `${DIR}/radiantlybare-green.webp`, w: 640, h: 444 },
+  { src: `${DIR}/portal-tan.webp`, w: 640, h: 443 },
+  { src: `${DIR}/kahlo.webp`, w: 640, h: 309 },
   { src: `${DIR}/hoodie-back.webp`, w: 640, h: 476 },
-  { src: `${DIR}/laptopfinal4.webp`, w: 640, h: 450 },
-  { src: `${DIR}/powerappsfinal.webp`, w: 640, h: 501 },
 ];
 
 const INTERVAL_MS = 900;

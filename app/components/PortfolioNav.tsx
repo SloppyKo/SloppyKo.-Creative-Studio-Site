@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 
 const pods = [
-  { label: "Country Collision", id: "country-collision", color: "#D64545" },
-  { label: "Radiantly Bare", id: "radiantly-bare", color: "#D64545" },
-  { label: "Kahlo", id: "kahlo", color: "#D64545" },
-  { label: "Operations Portal", id: "operations-portal", color: "#D64545" },
+  { label: "Country Collision", id: "country-collision" },
+  { label: "Radiantly Bare", id: "radiantly-bare" },
+  { label: "Kahlo", id: "kahlo" },
+  { label: "Operations Portal", id: "operations-portal" },
 ];
 
 export default function PortfolioNav() {
@@ -43,7 +43,7 @@ export default function PortfolioNav() {
     <div className="sticky top-[4.5rem] z-40 border-b border-white/10 bg-[#11131a]/90 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-4 md:px-8">
         <div className="flex items-center gap-1 overflow-x-auto scrollbar-none">
-          {pods.map(({ label, id, color }) => {
+          {pods.map(({ label, id }) => {
             const isActive = activeId === id;
             return (
               <button
@@ -54,9 +54,10 @@ export default function PortfolioNav() {
                 }`}
               >
                 {label}
+                {/* Neutral grey so it doesn't compete with the colorful project sections */}
                 <span
-                  className="absolute bottom-0 left-0 h-[2px] rounded-full transition-all duration-300"
-                  style={{ width: isActive ? "100%" : "0%", backgroundColor: color }}
+                  className="absolute bottom-0 left-0 h-[2px] rounded-full bg-gray-400 transition-all duration-300"
+                  style={{ width: isActive ? "100%" : "0%" }}
                 />
               </button>
             );

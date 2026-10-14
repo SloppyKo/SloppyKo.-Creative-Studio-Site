@@ -41,7 +41,7 @@ export default function ServicesList() {
           link: { label: "See our websites", href: "/portfolio#country-collision" },
         },
         {
-          title: "Google/SEO Management",
+          title: "Local SEO",
           text: "We set up and manage your Google Business Profile so you show up when customers search.",
           includes: [
             ["Profile setup", "services, contact info, and the fine print"],

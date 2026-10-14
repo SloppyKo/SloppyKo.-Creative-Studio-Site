@@ -7,7 +7,7 @@ import BackToTop from "./components/BackToTop";
 import { Analytics } from "@vercel/analytics/next";
 
 const DESCRIPTION =
-  "Web design, Google management and SEO, social media, and branding for small businesses in Hanford, SLO, and the Central Valley and Central Coast.";
+  "Web design, local SEO, social media, and branding for small businesses in Hanford, SLO, and the Central Valley and Central Coast.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sloppyko.com"),
@@ -38,7 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    // data-scroll-behavior: page-to-page navigation jumps straight to the top instead of
+    // smooth-scrolling up from the old position (globals.css keeps smooth scroll for in-page links)
+    <html lang="en" data-scroll-behavior="smooth" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#11131a] text-[#f4f1ea]">
         <SiteNav />
         {children}
