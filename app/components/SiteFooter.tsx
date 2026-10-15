@@ -18,6 +18,13 @@ const PAGES = [
   { href: "/#contact", label: "Contact" },
 ];
 
+// Linked only from here: not in the site nav or sitemap.
+const POLICIES = [
+  { href: "/privacy", label: "Privacy Policy" },
+  { href: "/terms", label: "Terms" },
+  { href: "/cookies", label: "Cookies" },
+];
+
 const linkClass = "hover:text-[#f4f1ea] transition-colors duration-200";
 // Hidden on phones, where the row wraps and a divider could dangle at a line end.
 const dividerClass = "hidden sm:block h-4 w-px bg-[#f4f1ea]/20";
@@ -59,6 +66,11 @@ export default function SiteFooter() {
           <p className="text-center">
             Built by SloppyKo. Creative Studio &copy; 2026 All rights reserved
           </p>
+          <nav aria-label="Legal" className="flex flex-wrap justify-center gap-x-4 gap-y-1">
+            {POLICIES.map(({ href, label }) => (
+              <Link key={href} href={href} className={linkClass}>{label}</Link>
+            ))}
+          </nav>
         </div>
       </div>
     </footer>

@@ -241,10 +241,10 @@ export default function PortfolioPage() {
         link={{ label: "Visit site ↗", href: "https://radiantlybare.com" }}
         media={
           <Image
-            src="/images/radiantlybare-green.png"
+            src="/images/radiantlybare-green.webp"
             alt="Radiantly Bare esthetician website on a laptop"
-            width={3501}
-            height={2431}
+            width={2265}
+            height={1448}
             sizes="(min-width: 768px) 75vw, 100vw"
             className="w-full h-auto scale-[1.12] md:scale-[1.3]"
             style={FEATHER}

@@ -20,7 +20,7 @@ const PHOTOS: [string, number, number][] = [
   ["portal-tan.png", 3136, 2170],
   ["portal.webp", 1200, 1090],
   ["powerapps.webp", 1200, 917],
-  ["radiantlybare-green.png", 3501, 2431],
+  ["radiantlybare-green.webp", 2265, 1448],
   ["radiantlybare_laptop_3.webp", 2400, 1618],
   ["receipt-tool.webp", 1200, 1055],
 ];

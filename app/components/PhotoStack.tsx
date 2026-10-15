@@ -14,7 +14,7 @@ const ITEMS: StackItem[] = [
   { src: `${DIR}/powerapps.webp`, w: 640, h: 489 },
   { src: `${DIR}/receipt-tool.webp`, w: 640, h: 563 },
   { src: `${DIR}/phone.webp`, w: 640, h: 875 },
-  { src: `${DIR}/radiantlybare-green.webp`, w: 640, h: 444 },
+  { src: `${DIR}/radiantlybare-green.webp`, w: 640, h: 409 },
   { src: `${DIR}/portal-tan.webp`, w: 640, h: 443 },
   { src: `${DIR}/kahlo.webp`, w: 640, h: 309 },
   { src: `${DIR}/hoodie-back.webp`, w: 640, h: 476 },
